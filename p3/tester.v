@@ -7,11 +7,10 @@ module tester();
     recognizer         rec(x, clk, reset, z);
 
     initial begin
-        $monitor("%4d z = %b", $time, z);
         clk = 0;
-        reset = 1;
+        reset = 0;
         x = 0;
-        #10 reset = 0;
+        #10 reset = 1;
     end
 
     always begin
@@ -35,5 +34,6 @@ module tester();
         #10 x = 1; $display("%4d: x = %b z = %b", $time, x, z);
         #10 x = 0; $display("%4d: x = %b z = %b", $time, x, z);
         #10 x = 1; $display("%4d: x = %b z = %b", $time, x, z);
+        #10 $finish;
     end
 endmodule

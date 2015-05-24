@@ -6,6 +6,8 @@ module recognizer (x, clk, reset, z);
     input x, clk, reset;
     output z;
 
+    wire d0, d1, q0, q1;
+
     sync_d_ff    ff0(d0, clk, reset, q0);
     sync_d_ff    ff1(d1, clk, reset, q1);
     og           og0(q0, q1, x, z);

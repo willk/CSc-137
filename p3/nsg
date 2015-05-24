@@ -1,0 +1,30 @@
+#! /usr/local/Cellar/icarus-verilog/0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fde31c080a0 .scope module, "nsg" "nsg" 2 1;
+ .timescale 0 0;
+L_0x7fde31c18580 .functor BUFZ 1, C4<z>, C4<0>, C4<0>, C4<0>;
+L_0x7fde31c18600 .functor NOT 1, C4<z>, C4<0>, C4<0>, C4<0>;
+L_0x7fde31c186a0 .functor AND 1, C4<z>, L_0x7fde31c18600, C4<1>, C4<1>;
+L_0x7fde31c18780 .functor NOT 1, C4<z>, C4<0>, C4<0>, C4<0>;
+L_0x7fde31c18840 .functor AND 1, C4<z>, L_0x7fde31c18780, C4<1>, C4<1>;
+L_0x7fde31c18950 .functor AND 1, L_0x7fde31c18840, C4<z>, C4<1>, C4<1>;
+L_0x7fde31c189f0 .functor OR 1, L_0x7fde31c186a0, L_0x7fde31c18950, C4<0>, C4<0>;
+v0x7fde31c06d30_0 .net *"_s10", 0 0, L_0x7fde31c18950; 1 drivers
+v0x7fde31c18000_0 .net *"_s2", 0 0, L_0x7fde31c18600; 1 drivers
+v0x7fde31c18090_0 .net *"_s4", 0 0, L_0x7fde31c186a0; 1 drivers
+v0x7fde31c18110_0 .net *"_s6", 0 0, L_0x7fde31c18780; 1 drivers
+v0x7fde31c181a0_0 .net *"_s8", 0 0, L_0x7fde31c18840; 1 drivers
+v0x7fde31c18260_0 .net "d0", 0 0, L_0x7fde31c18580; 1 drivers
+v0x7fde31c182f0_0 .net "d1", 0 0, L_0x7fde31c189f0; 1 drivers
+v0x7fde31c183b0_0 .net "q0", 0 0, C4<z>; 0 drivers
+v0x7fde31c18430_0 .net "q1", 0 0, C4<z>; 0 drivers
+v0x7fde31c18500_0 .net "x", 0 0, C4<z>; 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "nsg.v";

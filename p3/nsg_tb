@@ -1,0 +1,75 @@
+#! /usr/local/Cellar/icarus-verilog/0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7ff148c04e70 .scope module, "og_tb" "og_tb" 2 2;
+ .timescale 0 0;
+v0x7ff148c1cd60_0 .net "d0", 0 0, L_0x7ff148c1d070; 1 drivers
+v0x7ff148c1ce00_0 .net "d1", 0 0, L_0x7ff148c1d560; 1 drivers
+v0x7ff148c1ce80_0 .var "q0", 0 0;
+v0x7ff148c1cf20_0 .var "q1", 0 0;
+v0x7ff148c1cfc0_0 .var "x", 0 0;
+S_0x7ff148c04f50 .scope module, "nsg0" "nsg" 2 7, 3 1, S_0x7ff148c04e70;
+ .timescale 0 0;
+L_0x7ff148c1d070 .functor BUFZ 1, v0x7ff148c1cfc0_0, C4<0>, C4<0>, C4<0>;
+L_0x7ff148c1d150 .functor NOT 1, v0x7ff148c1cfc0_0, C4<0>, C4<0>, C4<0>;
+L_0x7ff148c1d1b0 .functor AND 1, v0x7ff148c1ce80_0, L_0x7ff148c1d150, C4<1>, C4<1>;
+L_0x7ff148c1d290 .functor NOT 1, v0x7ff148c1ce80_0, C4<0>, C4<0>, C4<0>;
+L_0x7ff148c1d2f0 .functor AND 1, v0x7ff148c1cf20_0, L_0x7ff148c1d290, C4<1>, C4<1>;
+L_0x7ff148c1d440 .functor AND 1, L_0x7ff148c1d2f0, v0x7ff148c1cfc0_0, C4<1>, C4<1>;
+L_0x7ff148c1d560 .functor OR 1, L_0x7ff148c1d1b0, L_0x7ff148c1d440, C4<0>, C4<0>;
+v0x7ff148c09fe0_0 .net *"_s10", 0 0, L_0x7ff148c1d440; 1 drivers
+v0x7ff148c1c7e0_0 .net *"_s2", 0 0, L_0x7ff148c1d150; 1 drivers
+v0x7ff148c1c870_0 .net *"_s4", 0 0, L_0x7ff148c1d1b0; 1 drivers
+v0x7ff148c1c8f0_0 .net *"_s6", 0 0, L_0x7ff148c1d290; 1 drivers
+v0x7ff148c1c980_0 .net *"_s8", 0 0, L_0x7ff148c1d2f0; 1 drivers
+v0x7ff148c1ca40_0 .alias "d0", 0 0, v0x7ff148c1cd60_0;
+v0x7ff148c1cad0_0 .alias "d1", 0 0, v0x7ff148c1ce00_0;
+v0x7ff148c1cb90_0 .net "q0", 0 0, v0x7ff148c1ce80_0; 1 drivers
+v0x7ff148c1cc10_0 .net "q1", 0 0, v0x7ff148c1cf20_0; 1 drivers
+v0x7ff148c1cce0_0 .net "x", 0 0, v0x7ff148c1cfc0_0; 1 drivers
+    .scope S_0x7ff148c04e70;
+T_0 ;
+    %vpi_call 2 10 "$monitor", "%4d: q1 = %b, q0 = %b, x = %b, d1 = %b, d0 = %b", $time, v0x7ff148c1cf20_0, v0x7ff148c1ce80_0, v0x7ff148c1cfc0_0, v0x7ff148c1ce00_0, v0x7ff148c1cd60_0;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 0, 1;
+    %set/v v0x7ff148c1ce80_0, 0, 1;
+    %set/v v0x7ff148c1cfc0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 0, 1;
+    %set/v v0x7ff148c1ce80_0, 0, 1;
+    %set/v v0x7ff148c1cfc0_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 0, 1;
+    %set/v v0x7ff148c1ce80_0, 1, 1;
+    %set/v v0x7ff148c1cfc0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 0, 1;
+    %set/v v0x7ff148c1ce80_0, 1, 1;
+    %set/v v0x7ff148c1cfc0_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 1, 1;
+    %set/v v0x7ff148c1ce80_0, 0, 1;
+    %set/v v0x7ff148c1cfc0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 1, 1;
+    %set/v v0x7ff148c1ce80_0, 0, 1;
+    %set/v v0x7ff148c1cfc0_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 1, 1;
+    %set/v v0x7ff148c1ce80_0, 1, 1;
+    %set/v v0x7ff148c1cfc0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x7ff148c1cf20_0, 1, 1;
+    %set/v v0x7ff148c1ce80_0, 1, 1;
+    %set/v v0x7ff148c1cfc0_0, 1, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nsg_tb.v";
+    "./nsg.v";
